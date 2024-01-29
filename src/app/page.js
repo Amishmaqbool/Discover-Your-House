@@ -334,6 +334,9 @@ export default function Home() {
       <div className="max-w-[600px] px-12 py-5 rounded-md bg-yellow-500 text-4xl font-bold">
      HOUSE OF GADGETS
       </div>
+      <button className="pt-40" onClick={() => window.location.reload()}>
+BACK TO THE MAIN MENU
+</button>
       </>
     )}
     {result === "Blue" && (
@@ -346,6 +349,10 @@ export default function Home() {
         <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500  text-4xl font-bold">
      HOUSE OF PACE
       </div>
+      <button className="pt-40" onClick={() => window.location.reload()}>
+BACK TO THE MAIN MENU
+</button>
+
       </>
     )}
     {result === "Pink" && (
@@ -358,6 +365,9 @@ export default function Home() {
       <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500  text-4xl font-bold">
      HOUSE OF LIFE
       </div>
+      <button className="pt-40" onClick={() => window.location.reload()}>
+BACK TO THE MAIN MENU
+</button>
       </>
     )}
   </div>
