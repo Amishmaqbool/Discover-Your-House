@@ -2,138 +2,177 @@
 import { useState } from "react";
 const questions = [
   {
-    id: 5,
+    id: 1,
     text: "IF YOU HAD TO CREATE A OPTION , WHAT WOULD YOU MAKE?",
+    backgroundanimated: true, 
     options: [
       {
         label: "ETERNITY",
         color: "Pink",
         image: "/Assets/choose-a-option/primary.svg",
+        backgroundanimated: false, 
       },
       {
         label: "INTELLECT",
         color: "Blue",
         image: "/Assets/choose-a-option/secondary.svg",
+        backgroundanimated: false, 
       },
       {
         label: "CREATIVITY",
         color: "Yellow",
         image: "/Assets/choose-a-option/tertiary.svg",
+        backgroundanimated: false, 
       },
     ],
   },
   {
-    id: 4,
-    text: "IF YOU HAD ANY POWER WHAT WOULD YOU CHOOSE?",
-    options: [
+    id: 2,
+    text: "IF YOU HAD ANY POWER WHAT WOULD YOU CHOOSE?",    options: [
       {
         label: "STRENGTH",
         color: "Yellow",
         image: "/Assets/choose-a-power/primary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "SHAPESHIFT",
         color: "Blue",
         image: "/Assets/choose-a-power/secondary.svg",
+        backgroundanimated: false, 
+
       },
       {
-        label: "Pink",
+        label: "HEAL",
         color: "Blue",
         image: "/Assets/choose-a-power/tertiary.svg",
+        backgroundanimated: false, 
+
       },
     ],
   },
   
   {
-    id: 1,
+    id: 3,
     text: "WHAT ARE  YOU MOST LOOKING FORWARD TO LEARNING AT SCHOOL OF INVENTION ?",
     options: [
       {
         label: "FLYING",
         color: "Yellow",
         image: "/Assets/school-of-invention/primary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "TELEPORTING",
         color: "Blue",
         image: "/Assets/school-of-invention/secondary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "CURING",
         color: "Pink",
         image: "/Assets/school-of-invention/tertiary.svg",
+        backgroundanimated: false, 
+
       },
     ],
   },
   {
-    id: 2,
+    id: 4,
     text: "THREE BOXES ARE REPLACED BEFORE YOU WHICH ONE WOULD YOU CHOOSE?",
     options: [
       {
         label: "TOOLS",
         color: "Blue",
         image: "/Assets/three-boxes/primary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "PAINTS",
         color: "Yellow",
         image: "/Assets/three-boxes/secondary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "BLOOD",
         color: "Pink",
         image: "/Assets/three-boxes/tertiary.svg",
+        backgroundanimated: false, 
+
       },
     ],
   },
   {
-    id: 4,
+    id: 5,
     text: "CHOOSE TO CONTINUE?",
     options: [
       {
         label: "RIVER",
         color: "Pink",
         image: "/Assets/choose-to-continue/primary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "TREE",
         color: "Yellow",
         image: "/Assets/choose-to-continue/secondary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "MOON",
         color: "Blue",
         image: "/Assets/choose-to-continue/tertiary.svg",
+        backgroundanimated: false, 
+
       },
     ],
   },
   {
-    id: 4,
+    id: 6,
     text: "",
     options: [
-      { label: "DANCE", color: "Yellow", image: "" },
-      { label: "DISCOVER", color: "Blue", image: "" },
-      { label: "DREAM", color: "Pink", image: "" },
+      { label: "DANCE", color: "Yellow", image: "" , 
+      backgroundanimated: true, 
+    },
+      { label: "DISCOVER", color: "Blue", image: "" ,
+      backgroundanimated:true, 
+    },
+      { label: "DREAM", color: "Pink", image: "",
+      backgroundanimated: true, 
+    },
     ],
   },
   {
-    id: 4,
+    id: 7,
     text: "CHOOSE A PET",
     options: [
       {
         label: "",
         color: "Blue",
         image: "/Assets/choose-a-pet/primary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "",
         color: "Pink",
         image: "/Assets/choose-a-pet/secondary.svg",
+        backgroundanimated: false, 
+
       },
       {
         label: "",
         color: "Yellow",
         image: "/Assets/choose-a-pet/tertiary.svg",
+        backgroundanimated: false, 
+
       },
     ],
   },
@@ -241,13 +280,17 @@ export default function Home() {
                       {option.image && (
                         <div>
                           <img
-                            className=" shadow-2xl bg-black bg-opacity-30 h-[400px] w-[800px]"
+                            className=" shadow-2xl bg-black bg-transparent h-[400px] w-[800px]"
                             src={option?.image}
                             alt=""
                           />
                         </div>
                       )}
-                      <button className="lg:text-[30px] mt-8 font-bold">
+                     <button
+  className={`lg:text-[30px] mt-8  font-bold ${
+    option.backgroundanimated ? 'bg-gray-500 rounded-md px-8 py-3' : ''
+  }`}
+>
                         {option?.label}
                         <br />
                       </button>
