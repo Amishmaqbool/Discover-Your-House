@@ -4,7 +4,7 @@ import VideoBackground from "@/components/VideoBackground";
 const questions = [
   {
     id: 1,
-    text: "IF YOU HAD TO CREATE A OPTION , WHAT WOULD YOU MAKE?",
+    text: "IF YOU HAD TO CREATE A OPTION, WHAT WOULD YOU MAKE?",
     backgroundanimated: true,
     options: [
       {
@@ -54,7 +54,7 @@ const questions = [
 
   {
     id: 3,
-    text: "WHAT ARE  YOU MOST LOOKING FORWARD TO LEARNING AT SCHOOL OF INVENTION ?",
+    text: "WHAT ARE YOU MOST LOOKING FORWARD TO LEARNING AT SCHOOL OF INVENTION?",
     options: [
       {
         label: "FLYING",
@@ -78,7 +78,7 @@ const questions = [
   },
   {
     id: 4,
-    text: "THREE BOXES ARE REPLACED BEFORE YOU WHICH ONE WOULD YOU CHOOSE?",
+    text: "THREE BOXES ARE REPLACED BEFORE YOU, WHICH ONE WOULD YOU CHOOSE?",
     options: [
       {
         label: "TOOLS",
@@ -220,21 +220,24 @@ export default function Home() {
     <div
       className={
         quizStarted
-          ? "bg-container relative text-white bg-neutral-800 grid items-center"
-          : "pb-12 bg-neutral-800 grid items-center h-[100vh] z-[10] text-white"
+          ? "bg-container relative text-white h-[100vh] bg-neutral-800 grid items-center"
+          : "pb-12 bg-neutral-800 grid items-center z-[10] h-[100vh] text-white"
       }
     >
-      <div className="mx-auto max-w-[1000px]">
+      <div className="mx-auto max-w-[1200px]">
         {!quizStarted ? (
           <div className="flex flex-col mx-auto">
             <img src="/Assets/logo.svg" className="h-28 w-28 mx-auto" alt="" />
-            <h1 className="mx-auto lg:text-[48px] pt-[24px] font-bold">
+            <p className="text-white font-normal text-5xl mt-[45.49px] text-center">
+              SOI
+            </p>
+            <h1 className="mx-auto lg:text-[59.69px] pt-16 font-normal">
               DISCOVER YOUR HOUSE
             </h1>
-            <div className="mx-auto pt-10">
+            <div className="mx-auto pt-20">
               <button
                 onClick={startQuiz}
-                className="text-center font-[ConthraxSb-Regular] hover:text-[#00FFFF] border-[#00FFFF] border-2 py-4 rounded-md px-12  text-3xl font-bold"
+                className="text-center hover:text-[#00FFFF] border-[#00FFFF] border-2 py-[25px] rounded-2xl px-[183px]  text-[35px] font-normal"
               >
                 START THE SORTING CEREMONY
               </button>
@@ -258,17 +261,17 @@ export default function Home() {
                     </video>
                   </div>
                   <div className="content-overlay">
-                    <li className="flex absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
+                    <li className="flex absolute -mt-32 px-16 w-[895px] left-1/2 transform -translate-x-1/2 lg:text-4xl pb-3 font-normal justify-center text-center">
                       {questions[currentQuestion].text} <br />
                     </li>
                   </div>
                 </>
-                <div className="lg:flex cursor-pointer mt-40 gap-20 lg:justify-between grid justify-center ">
+                <div className="lg:flex cursor-pointer mt-40 gap-32 lg:justify-between grid justify-center">
                   {questions[currentQuestion].options.map((option) => (
                     <div
                       key={option.label}
                       onClick={() => handleOptionSelect(option)}
-                      className="text-center hover:scale-105 min-h-[200px] z-[1000] w-full"
+                      className="text-center hover:scale-105 duration-200 min-h-[200px] z-[1000] w-full"
                     >
                       {option.image && (
                         <div>
@@ -280,9 +283,9 @@ export default function Home() {
                         </div>
                       )}
                       <button
-                        className={`lg:text-[25px] mt-7 bg-opacity-50 font-bold ${
+                        className={`lg:text-[25px] mt-7 bg-opacity-50 font-normal ${
                           option.backgroundanimated
-                            ? "bg-gray-500 rounded-md px-12 py-0.5 lg:text-[44px]"
+                            ? "bg-gray-500 rounded-2xl px-12 py-0.5 lg:text-[44px]"
                             : ""
                         }`}
                       >
@@ -316,14 +319,14 @@ export default function Home() {
                     </video>
                   </div>
                   <div className="content-overlay">
-                    <div className="absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
-                      <h1 className="text-[32px] font-bold max-w-[600px] text-center">
+                    <div className="absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-normal justify-center text-center">
+                      <h1 className="text-[45.123px] font-normal px-0 lg:w-[800px] text-center">
                         THE SORTING CEREMONY IS ABOUT TO END
                       </h1>
-                      <div className="grid pt-14 justify-center">
+                      <div className="grid pt-32 justify-center">
                         <button
                           onClick={handleContinue}
-                          className="text-center font-bold my-3 border-[#00FFFF] w-[340px] border-2 py-4 rounded-md px-12"
+                          className="text-center text-[35.093px] font-normal my-3 border-[#00FFFF] w-[340px] border-2 py-4 rounded-2xl px-12"
                         >
                           CONTINUE
                         </button>
@@ -344,7 +347,7 @@ export default function Home() {
                 autoPlay
                 loop
                 muted
-                className="w-full h-important   object-cover"
+                className="w-full h-important object-cover"
                 controls={false}
               >
                 <source src="/Assets/bg-video.mp4" type="video/mp4" />
@@ -352,85 +355,88 @@ export default function Home() {
               </video>
             </div>
             <div className="content-overlay">
-              <div className="absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
+              <div className="absolute -mt-40 max-w-[1400px] left-1/2 bottom-0 top-[28%] transform -translate-x-1/2 lg:px-20 lg:text-[28px] font-normal justify-center text-center">
                 <div className="h-screen h-important">
-                  <div className="flex flex-col h-screen justify-center items-center">
-                  {result === "Pink" && (
-                  <>
-                    <p className="lg:text-[35px] font-bold">
-                      CONGRATULATIONS...
-                    </p>
-                    <p className="lg:text-[35px] font-semibold">
-                      YOU ARE SELECTED FOR
-                    </p>
-                    <div>
-                      <img
-                        className="mt-6"
-                        src="/Assets/pink-status.svg"
-                        alt="yellow"
-                      />
-                    </div>
-                    <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500  text-4xl font-bold">
-                      HOUSE OF LIFE
-                    </div>
-                    <button
-                      className="pt-40 pb-2"
-                      onClick={() => window.location.reload()}
-                    >
-                      BACK TO THE MAIN MENU
-                    </button>
-                  </>
-                )}
-        {result === "Blue" && (
-                  <>
-                    <p className="lg:text-[45px] font-bold">CONGRATULATIONS!</p>
-                    <p className="lg:text-[45px] tracking-[0.1rem] font-semibold">
-                      YOU ARE SELECTED FOR...
-                    </p>
-                    <div>
-                      <img
-                        className="mt-6"
-                        src="/Assets/blue-status.svg"
-                        alt="yellow"
-                      />
-                    </div>
-                    <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500 mt-12 text-4xl font-bold">
-                      HOUSE OF PACE
-                    </div>
-                    <button
-                      className="pt-40 pb-2"
-                      onClick={() => window.location.reload()}
-                    >
-                      BACK TO THE MAIN MENU
-                    </button>
-                  </>
-                )}
-      {result === "Yellow" && (
-                  <>
-                    <p className="lg:text-[58px] font-bold">CONGRATULATIONS!</p>
-                    <p className="lg:text-[43px] font-semibold">
-                      YOU ARE SELECTED FOR...
-                    </p>
-                    <div>
-                      <img
-                        className="mt-6"
-                        src="/Assets/yellow-status.svg"
-                        alt="yellow"
-                      />
-                    </div>
-                    <div className="max-w-[600px] px-12 py-5 pt-12 rounded-md bg-yellow-500 text-4xl font-bold">
-                      HOUSE OF GADGETS
-                    </div>
-                    <button
-                      className="pt-40"
-                      onClick={() => window.location.reload()}
-                    >
-                      BACK TO THE MAIN MENU
-                    </button>
-                  </>
-                )}
+                  <div className="flex flex-col justify-center relative items-center">
+                    {result === "Pink" && (
+                      <>
+                        <p className="lg:text-[45px] font-normal">
+                          CONGRATULATIONS...
+                        </p>
+                        <p className="lg:text-[45px] w-[600px] font-normal">
+                          YOU ARE SELECTED FOR
+                        </p>
+                        <div>
+                          <img
+                            className="mt-6"
+                            src="/Assets/pink-status.svg"
+                            alt="pink"
+                          />
+                        </div>
+                        <div className="max-w-[600px] px-12 py-5 rounded-2xl mt-12 bg-pink-500 text-[35px] font-normal">
+                          HOUSE OF LIFE
+                        </div>
+                        <button
+                          className="pb-2 pt-40"
+                          onClick={() => window.location.reload()}
+                        >
+                          BACK TO THE MAIN MENU
+                        </button>
+                      </>
+                    )}
+                    {result === "Blue" && (
+                      <>
+                        <p className="lg:text-[45px] font-normal">
+                          CONGRATULATIONS...
+                        </p>
+                        <p className="lg:text-[45px] w-[600px] font-normal">
+                          YOU ARE SELECTED FOR
+                        </p>
+                        <div>
+                          <img
+                            className="mt-6"
+                            src="/Assets/blue-status.svg"
+                            alt="blue"
+                          />
+                        </div>
+                        <div className="max-w-[600px] px-12 py-5 rounded-2xl bg-blue-500 mt-12 text-[35px] font-normal">
+                          HOUSE OF PACE
+                        </div>
+                        <button
+                          className="pb-2 pt-32"
+                          onClick={() => window.location.reload()}
+                        >
+                          BACK TO THE MAIN MENU
+                        </button>
+                      </>
+                    )}
+                    {result === "Yellow" && (
+                      <>
+                        <p className="lg:text-[45px] font-normal">
+                          CONGRATULATIONS...
+                        </p>
+                        <p className="lg:text-[45px] w-[600px] font-normal">
+                          YOU ARE SELECTED FOR
+                        </p>
+                        <div>
+                          <img
+                            className="mt-6"
+                            src="/Assets/yellow-status.svg"
+                            alt="yellow"
+                          />
+                        </div>
+                        <div className="max-w-[600px] px-12 py-5 rounded-2xl mt-12 bg-yellow-500 text-[35px] font-normal">
+                          HOUSE OF GADGETS
+                        </div>
+                        <button
+                          className="pt-32"
+                          onClick={() => window.location.reload()}
+                        >
+                          BACK TO THE MAIN MENU
+                        </button>
+                      </>
+                    )}
                   </div>
-
                 </div>
               </div>
             </div>
@@ -439,9 +445,11 @@ export default function Home() {
             <div className="flex flex-col justify-center items-center">
               {result === "Yellow" && (
                 <>
-                  <p className="lg:text-[58px] font-bold">CONGRATULATIONS!</p>
-                  <p className="lg:text-[43px] font-semibold">
-                    YOU ARE SELECTED FOR...
+                  <p className="lg:text-[45px] font-normal">
+                    CONGRATULATIONS...
+                  </p>
+                  <p className="lg:text-[45px] w-[600px] font-normal">
+                    YOU ARE SELECTED FOR
                   </p>
                   <div>
                     <img
@@ -450,11 +458,11 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] px-12 py-5 pt-12 rounded-md bg-yellow-500 text-4xl font-bold">
+                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-yellow-500 text-[35px] font-normal">
                     HOUSE OF GADGETS
                   </div>
                   <button
-                    className="pt-40"
+                    className="pt-32"
                     onClick={() => window.location.reload()}
                   >
                     BACK TO THE MAIN MENU
@@ -463,9 +471,11 @@ export default function Home() {
               )}
               {result === "Blue" && (
                 <>
-                  <p className="lg:text-[45px] font-bold">CONGRATULATIONS!</p>
-                  <p className="lg:text-[45px] tracking-[0.1rem] font-semibold">
-                    YOU ARE SELECTED FOR...
+                  <p className="lg:text-[45px] font-normal">
+                    CONGRATULATIONS...
+                  </p>
+                  <p className="lg:text-[45px] w-[600px] font-normal">
+                    YOU ARE SELECTED FOR
                   </p>
                   <div>
                     <img
@@ -474,11 +484,11 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500 mt-12 text-4xl font-bold">
+                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500 mt-12 text-[35px] font-normal">
                     HOUSE OF PACE
                   </div>
                   <button
-                    className="pt-40 pb-2"
+                    className="pt-32 pb-2"
                     onClick={() => window.location.reload()}
                   >
                     BACK TO THE MAIN MENU
@@ -487,8 +497,10 @@ export default function Home() {
               )}
               {result === "Pink" && (
                 <>
-                  <p className="lg:text-[35px] font-bold">CONGRATULATIONS...</p>
-                  <p className="lg:text-[35px] font-semibold">
+                  <p className="lg:text-[45px] font-normal">
+                    CONGRATULATIONS...
+                  </p>
+                  <p className="lg:text-[45px] w-[600px] font-normal">
                     YOU ARE SELECTED FOR
                   </p>
                   <div>
@@ -498,11 +510,11 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500  text-4xl font-bold">
+                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500 text-[35px] font-normal">
                     HOUSE OF LIFE
                   </div>
                   <button
-                    className="pt-40 pb-2"
+                    className="pb-2 pt-40"
                     onClick={() => window.location.reload()}
                   >
                     BACK TO THE MAIN MENU
