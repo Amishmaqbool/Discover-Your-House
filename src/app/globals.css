@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: "Abnes Regular";
+  src: url("../../public/fonts/abnes.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Guardian Regular";
+  src: url("../../public/fonts/GuardianSans-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Conthraxsb Regular";
+  src: url("../../public/fonts/GuardianSans-Regular.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+.Abnes {
+  font-family: "Abnes", sans-serif;
+}
+.guardian {
+  font-family: "Guardian Regular", sans-serif;
+}
+.conthraxSb {
+  font-family: "Conthraxsb Regular", sans-serif;
+}
 .body {
   margin: 0%;
   width: 100%;

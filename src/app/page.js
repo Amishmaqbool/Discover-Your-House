@@ -228,16 +228,16 @@ export default function Home() {
         {!quizStarted ? (
           <div className="flex flex-col mx-auto">
             <img src="/Assets/logo.svg" className="h-28 w-28 mx-auto" alt="" />
-            <p className="text-white font-normal text-5xl mt-[45.49px] text-center">
+            <p className="text-white Abnes text-5xl mt-[45.49px] text-center">
               SOI
             </p>
-            <h1 className="mx-auto lg:text-[59.69px] pt-16 font-normal">
+            <h1 className="mx-auto guardian lg:text-[59.69px] pt-16 font-normal">
               DISCOVER YOUR HOUSE
             </h1>
             <div className="mx-auto pt-20">
               <button
                 onClick={startQuiz}
-                className="text-center hover:text-[#00FFFF] border-[#00FFFF] border-2 py-[25px] rounded-2xl px-[183px]  text-[35px] font-normal"
+                className="text-center conthraxSb hover:text-[#00FFFF] border-[#00FFFF] border-2 py-[25px] rounded-2xl px-[183px]  text-[35px] font-normal"
               >
                 START THE SORTING CEREMONY
               </button>
@@ -261,12 +261,12 @@ export default function Home() {
                     </video>
                   </div>
                   <div className="content-overlay">
-                    <li className="flex absolute -mt-32 px-16 w-[895px] left-1/2 transform -translate-x-1/2 lg:text-4xl pb-3 font-normal justify-center text-center">
+                    <li className="flex conthraxSb absolute -mt-32 px-16 w-[895px] left-1/2 transform -translate-x-1/2 lg:text-4xl pb-3 font-normal justify-center text-center">
                       {questions[currentQuestion].text} <br />
                     </li>
                   </div>
                 </>
-                <div className="lg:flex cursor-pointer mt-40 gap-32 lg:justify-between grid justify-center">
+                <div className="lg:flex conthraxSb cursor-pointer mt-40 gap-32 lg:justify-between grid justify-center">
                   {questions[currentQuestion].options.map((option) => (
                     <div
                       key={option.label}
@@ -283,7 +283,7 @@ export default function Home() {
                         </div>
                       )}
                       <button
-                        className={`lg:text-[25px] mt-7 bg-opacity-50 font-normal ${
+                        className={`lg:text-[25px] conthraxSb mt-7 bg-opacity-50 font-normal ${
                           option.backgroundanimated
                             ? "bg-gray-500 rounded-2xl px-12 py-0.5 lg:text-[44px]"
                             : ""
@@ -320,13 +320,13 @@ export default function Home() {
                   </div>
                   <div className="content-overlay">
                     <div className="absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-normal justify-center text-center">
-                      <h1 className="text-[45.123px] font-normal px-0 lg:w-[800px] text-center">
+                      <h1 className="text-[45.123px] conthraxSb  px-0 lg:w-[800px] text-center">
                         THE SORTING CEREMONY IS ABOUT TO END
                       </h1>
                       <div className="grid pt-32 justify-center">
                         <button
                           onClick={handleContinue}
-                          className="text-center text-[35.093px] font-normal my-3 border-[#00FFFF] w-[340px] border-2 py-4 rounded-2xl px-12"
+                          className="text-center text-[35.093px] conthraxSb my-3 border-[#00FFFF] w-[340px] border-2 py-4 rounded-2xl px-12"
                         >
                           CONTINUE
                         </button>
@@ -360,10 +360,10 @@ export default function Home() {
                   <div className="flex flex-col justify-center relative items-center">
                     {result === "Pink" && (
                       <>
-                        <p className="lg:text-[45px] font-normal">
+                        <p className="lg:text-[45px] conthraxSb">
                           CONGRATULATIONS...
                         </p>
-                        <p className="lg:text-[45px] w-[600px] font-normal">
+                        <p className="lg:text-[45px] w-[600px] conthraxSb">
                           YOU ARE SELECTED FOR
                         </p>
                         <div>
@@ -373,7 +373,7 @@ export default function Home() {
                             alt="pink"
                           />
                         </div>
-                        <div className="max-w-[600px] px-12 py-5 rounded-2xl mt-12 bg-pink-500 text-[35px] font-normal">
+                        <div className="max-w-[600px] px-12 py-5 rounded-2xl mt-12 bg-pink-500 text-[35px] conthraxSb">
                           HOUSE OF LIFE
                         </div>
                         <button
@@ -386,10 +386,10 @@ export default function Home() {
                     )}
                     {result === "Blue" && (
                       <>
-                        <p className="lg:text-[45px] font-normal">
+                        <p className="lg:text-[45px] conthraxSb">
                           CONGRATULATIONS...
                         </p>
-                        <p className="lg:text-[45px] w-[600px] font-normal">
+                        <p className="lg:text-[45px] w-[600px] conthraxSb">
                           YOU ARE SELECTED FOR
                         </p>
                         <div>
@@ -399,11 +399,11 @@ export default function Home() {
                             alt="blue"
                           />
                         </div>
-                        <div className="max-w-[600px] px-12 py-5 rounded-2xl bg-blue-500 mt-12 text-[35px] font-normal">
+                        <div className="max-w-[600px] px-12 py-5 rounded-2xl bg-blue-500 mt-12 text-[35px] conthraxSb">
                           HOUSE OF PACE
                         </div>
                         <button
-                          className="pb-2 pt-32"
+                          className="pb-2 pt-32 conthraxSb"
                           onClick={() => window.location.reload()}
                         >
                           BACK TO THE MAIN MENU
@@ -412,10 +412,10 @@ export default function Home() {
                     )}
                     {result === "Yellow" && (
                       <>
-                        <p className="lg:text-[45px] font-normal">
+                        <p className="lg:text-[45px] conthraxSb">
                           CONGRATULATIONS...
                         </p>
-                        <p className="lg:text-[45px] w-[600px] font-normal">
+                        <p className="lg:text-[45px] w-[600px] conthraxSb">
                           YOU ARE SELECTED FOR
                         </p>
                         <div>
@@ -425,11 +425,11 @@ export default function Home() {
                             alt="yellow"
                           />
                         </div>
-                        <div className="max-w-[600px] px-12 py-5 rounded-2xl mt-12 bg-yellow-500 text-[35px] font-normal">
+                        <div className="max-w-[600px] px-12 py-5 rounded-2xl mt-12 bg-yellow-500 text-[35px] conthraxSb">
                           HOUSE OF GADGETS
                         </div>
                         <button
-                          className="pt-32"
+                          className="pt-32 conthraxSb"
                           onClick={() => window.location.reload()}
                         >
                           BACK TO THE MAIN MENU
@@ -442,7 +442,7 @@ export default function Home() {
             </div>
           </div>
           {status && (
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex conthraxSb flex-col justify-center items-center">
               {result === "Yellow" && (
                 <>
                   <p className="lg:text-[45px] font-normal">
@@ -458,11 +458,11 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-yellow-500 text-[35px] font-normal">
+                  <div className="max-w-[600px] conthraxSb px-12 py-5 rounded-md bg-yellow-500 text-[35px] font-normal">
                     HOUSE OF GADGETS
                   </div>
                   <button
-                    className="pt-32"
+                    className="pt-32 conthraxSb"
                     onClick={() => window.location.reload()}
                   >
                     BACK TO THE MAIN MENU
@@ -471,10 +471,10 @@ export default function Home() {
               )}
               {result === "Blue" && (
                 <>
-                  <p className="lg:text-[45px] font-normal">
+                  <p className="lg:text-[45px] conthraxSb">
                     CONGRATULATIONS...
                   </p>
-                  <p className="lg:text-[45px] w-[600px] font-normal">
+                  <p className="lg:text-[45px] w-[600px] conthraxSb">
                     YOU ARE SELECTED FOR
                   </p>
                   <div>
@@ -484,11 +484,11 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500 mt-12 text-[35px] font-normal">
+                  <div className="max-w-[600px] conthraxSb px-12 py-5 rounded-md bg-blue-500 mt-12 text-[35px] font-normal">
                     HOUSE OF PACE
                   </div>
                   <button
-                    className="pt-32 pb-2"
+                    className="pt-32 conthraxSb pb-2"
                     onClick={() => window.location.reload()}
                   >
                     BACK TO THE MAIN MENU
@@ -497,10 +497,10 @@ export default function Home() {
               )}
               {result === "Pink" && (
                 <>
-                  <p className="lg:text-[45px] font-normal">
+                  <p className="lg:text-[45px] conthraxSb">
                     CONGRATULATIONS...
                   </p>
-                  <p className="lg:text-[45px] w-[600px] font-normal">
+                  <p className="lg:text-[45px] w-[600px] conthraxSb">
                     YOU ARE SELECTED FOR
                   </p>
                   <div>
@@ -510,7 +510,7 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500 text-[35px] font-normal">
+                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500 text-[35px] conthraxSb">
                     HOUSE OF LIFE
                   </div>
                   <button
