@@ -468,7 +468,7 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] conthraxSb px-12 py-5 rounded-md bg-yellow-500 text-[35px] font-normal">
+                  <div className="max-w-[600px]  shadow-2xl shadow-gray-700  conthraxSb px-12 py-5 rounded-md bg-yellow-500 text-[35px] font-normal">
                     HOUSE OF GADGETS
                   </div>
                   <button
@@ -494,7 +494,7 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] conthraxSb px-12 py-5 rounded-md bg-blue-500 mt-12 text-[35px] font-normal">
+                  <div className="max-w-[600px]  shadow-2xl shadow-gray-700 conthraxSb px-12 py-5 rounded-md bg-blue-500 mt-12 text-[35px] font-normal">
                     HOUSE OF PACE
                   </div>
                   <button
@@ -520,7 +520,7 @@ export default function Home() {
                       alt="yellow"
                     />
                   </div>
-                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500 text-[35px] conthraxSb">
+                  <div className="max-w-[600px]  shadow-2xl shadow-gray-700  px-12 py-5 rounded-md bg-pink-500 text-[35px] conthraxSb">
                     HOUSE OF LIFE
                   </div>
                   <button
