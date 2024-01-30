@@ -45,7 +45,7 @@ const questions = [
       },
       {
         label: "HEAL",
-        color: "Blue",
+        color: "Pink",
         image: "/Assets/choose-a-power/tertiary.svg",
         backgroundanimated: false,
       },
