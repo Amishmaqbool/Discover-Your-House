@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import VideoBackground from "@/components/VideoBackground";
 const questions = [
   {
     id: 1,
@@ -137,19 +138,19 @@ const questions = [
     text: "CHOOSE A PET",
     options: [
       {
-        label: "",
+        label: null,
         color: "Blue",
         image: "/Assets/choose-a-pet/primary.svg",
         backgroundanimated: false,
       },
       {
-        label: "",
+        label: null,
         color: "Pink",
         image: "/Assets/choose-a-pet/secondary.svg",
         backgroundanimated: false,
       },
       {
-        label: "",
+        label: null,
         color: "Yellow",
         image: "/Assets/choose-a-pet/tertiary.svg",
         backgroundanimated: false,
@@ -199,7 +200,7 @@ export default function Home() {
     answers.forEach((answer) => {
       count[answer.color]++;
     });
-
+    console.log(count);
     let mostSelected = "Pink";
     if (count.Yellow === count.Pink && count.Yellow === count.Blue) {
       mostSelected = "Pink";
@@ -243,24 +244,36 @@ export default function Home() {
           <>
             {!sortingCeremonyEnded && (
               <div className="z-[1000]">
-                <ul>
-                  <br />
-                  <li className="flex lg:text-[28px] pb-3 font-bold justify-center text-center">
-                    {questions[currentQuestion].text} <br />
-                  </li>
-                  <br />
-                </ul>
-                <div className="lg:flex cursor-pointer gap-20 lg:justify-between grid justify-center ">
+                <>
+                  <div className="video-container">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      className="w-full h-full object-cover"
+                      controls={false}
+                    >
+                      <source src="/Assets/bg-video.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div className="content-overlay">
+                    <li className="flex absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
+                      {questions[currentQuestion].text} <br />
+                    </li>
+                  </div>
+                </>
+                <div className="lg:flex cursor-pointer mt-40 gap-20 lg:justify-between grid justify-center ">
                   {questions[currentQuestion].options.map((option) => (
                     <div
                       key={option.label}
                       onClick={() => handleOptionSelect(option)}
-                      className="text-center min-h-[200px] z-[1000] w-full"
+                      className="text-center hover:scale-105 min-h-[200px] z-[1000] w-full"
                     >
                       {option.image && (
                         <div>
                           <img
-                            className=" shadow-2xl bg-black bg-transparent h-[400px] w-[800px]"
+                            className=" shadow-2xl  bg-black bg-transparent h-[400px] w-[800px]"
                             src={option?.image}
                             alt=""
                           />
@@ -289,95 +302,214 @@ export default function Home() {
           {!status && (
             <div className="absolute top-0 items-center grid left-0 bg-container h-[100%]">
               <div className="grid justify-center ">
-                <h1 className="text-[32px] font-bold max-w-[600px] text-center">
-                  THE SORTING CEREMONY IS ABOUT TO END
-                </h1>
-                <div className="grid pt-14 justify-center">
-                  <button
-                    onClick={handleContinue}
-                    className="text-center font-bold my-3 border-[#00FFFF] w-[340px] border-2 py-4 rounded-md px-12"
-                  >
-                    CONTINUE
-                  </button>
-                </div>
+                <>
+                  <div className="video-container">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      className="w-full h-full object-cover"
+                      controls={false}
+                    >
+                      <source src="/Assets/bg-video.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div className="content-overlay">
+                    <div className="absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
+                      <h1 className="text-[32px] font-bold max-w-[600px] text-center">
+                        THE SORTING CEREMONY IS ABOUT TO END
+                      </h1>
+                      <div className="grid pt-14 justify-center">
+                        <button
+                          onClick={handleContinue}
+                          className="text-center font-bold my-3 border-[#00FFFF] w-[340px] border-2 py-4 rounded-md px-12"
+                        >
+                          CONTINUE
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </>
               </div>
             </div>
           )}
         </>
       )}
       {status && (
-        <div className="flex flex-col justify-center items-center">
-          {result === "Yellow" && (
-            <>
-              <p className="lg:text-[58px] font-bold">CONGRATULATIONS!</p>
-              <p className="lg:text-[43px] font-semibold">
-                YOU ARE SELECTED FOR...
-              </p>
-              <div>
-                <img
-                  className="mt-6"
-                  src="/Assets/yellow-status.svg"
-                  alt="yellow"
-                />
-              </div>
-              <div className="max-w-[600px] px-12 py-5 pt-12 rounded-md bg-yellow-500 text-4xl font-bold">
-                HOUSE OF GADGETS
-              </div>
-              <button
-                className="pt-40"
-                onClick={() => window.location.reload()}
+        <div className="">
+          <div>
+            <div className="video-container">
+              <video
+                autoPlay
+                loop
+                muted
+                className="w-full h-important   object-cover"
+                controls={false}
               >
-                BACK TO THE MAIN MENU
-              </button>
-            </>
-          )}
-          {result === "Blue" && (
-            <>
-              <p className="lg:text-[45px] font-bold">CONGRATULATIONS!</p>
-              <p className="lg:text-[45px] tracking-[0.1rem] font-semibold">
-                YOU ARE SELECTED FOR...
-              </p>
-              <div>
-                <img
-                  className="mt-6"
-                  src="/Assets/blue-status.svg"
-                  alt="yellow"
-                />
+                <source src="/Assets/bg-video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div className="content-overlay">
+              <div className="absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
+                <div className="h-screen h-important">
+                  <div className="flex flex-col h-screen justify-center items-center">
+                  {result === "Pink" && (
+                  <>
+                    <p className="lg:text-[35px] font-bold">
+                      CONGRATULATIONS...
+                    </p>
+                    <p className="lg:text-[35px] font-semibold">
+                      YOU ARE SELECTED FOR
+                    </p>
+                    <div>
+                      <img
+                        className="mt-6"
+                        src="/Assets/pink-status.svg"
+                        alt="yellow"
+                      />
+                    </div>
+                    <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500  text-4xl font-bold">
+                      HOUSE OF LIFE
+                    </div>
+                    <button
+                      className="pt-40 pb-2"
+                      onClick={() => window.location.reload()}
+                    >
+                      BACK TO THE MAIN MENU
+                    </button>
+                  </>
+                )}
+        {result === "Blue" && (
+                  <>
+                    <p className="lg:text-[45px] font-bold">CONGRATULATIONS!</p>
+                    <p className="lg:text-[45px] tracking-[0.1rem] font-semibold">
+                      YOU ARE SELECTED FOR...
+                    </p>
+                    <div>
+                      <img
+                        className="mt-6"
+                        src="/Assets/blue-status.svg"
+                        alt="yellow"
+                      />
+                    </div>
+                    <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500 mt-12 text-4xl font-bold">
+                      HOUSE OF PACE
+                    </div>
+                    <button
+                      className="pt-40 pb-2"
+                      onClick={() => window.location.reload()}
+                    >
+                      BACK TO THE MAIN MENU
+                    </button>
+                  </>
+                )}
+      {result === "Yellow" && (
+                  <>
+                    <p className="lg:text-[58px] font-bold">CONGRATULATIONS!</p>
+                    <p className="lg:text-[43px] font-semibold">
+                      YOU ARE SELECTED FOR...
+                    </p>
+                    <div>
+                      <img
+                        className="mt-6"
+                        src="/Assets/yellow-status.svg"
+                        alt="yellow"
+                      />
+                    </div>
+                    <div className="max-w-[600px] px-12 py-5 pt-12 rounded-md bg-yellow-500 text-4xl font-bold">
+                      HOUSE OF GADGETS
+                    </div>
+                    <button
+                      className="pt-40"
+                      onClick={() => window.location.reload()}
+                    >
+                      BACK TO THE MAIN MENU
+                    </button>
+                  </>
+                )}
+                  </div>
+
+                </div>
               </div>
-              <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500 mt-12 text-4xl font-bold">
-                HOUSE OF PACE
-              </div>
-              <button
-                className="pt-40 pb-2"
-                onClick={() => window.location.reload()}
-              >
-                BACK TO THE MAIN MENU
-              </button>
-            </>
-          )}
-          {result === "Pink" && (
-            <>
-              <p className="lg:text-[35px] font-bold">CONGRATULATIONS...</p>
-              <p className="lg:text-[35px] font-semibold">
-                YOU ARE SELECTED FOR
-              </p>
-              <div>
-                <img
-                  className="mt-6"
-                  src="/Assets/pink-status.svg"
-                  alt="yellow"
-                />
-              </div>
-              <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500  text-4xl font-bold">
-                HOUSE OF LIFE
-              </div>
-              <button
-                className="pt-40 pb-2"
-                onClick={() => window.location.reload()}
-              >
-                BACK TO THE MAIN MENU
-              </button>
-            </>
+            </div>
+          </div>
+          {status && (
+            <div className="flex flex-col justify-center items-center">
+              {result === "Yellow" && (
+                <>
+                  <p className="lg:text-[58px] font-bold">CONGRATULATIONS!</p>
+                  <p className="lg:text-[43px] font-semibold">
+                    YOU ARE SELECTED FOR...
+                  </p>
+                  <div>
+                    <img
+                      className="mt-6"
+                      src="/Assets/yellow-status.svg"
+                      alt="yellow"
+                    />
+                  </div>
+                  <div className="max-w-[600px] px-12 py-5 pt-12 rounded-md bg-yellow-500 text-4xl font-bold">
+                    HOUSE OF GADGETS
+                  </div>
+                  <button
+                    className="pt-40"
+                    onClick={() => window.location.reload()}
+                  >
+                    BACK TO THE MAIN MENU
+                  </button>
+                </>
+              )}
+              {result === "Blue" && (
+                <>
+                  <p className="lg:text-[45px] font-bold">CONGRATULATIONS!</p>
+                  <p className="lg:text-[45px] tracking-[0.1rem] font-semibold">
+                    YOU ARE SELECTED FOR...
+                  </p>
+                  <div>
+                    <img
+                      className="mt-6"
+                      src="/Assets/blue-status.svg"
+                      alt="yellow"
+                    />
+                  </div>
+                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-blue-500 mt-12 text-4xl font-bold">
+                    HOUSE OF PACE
+                  </div>
+                  <button
+                    className="pt-40 pb-2"
+                    onClick={() => window.location.reload()}
+                  >
+                    BACK TO THE MAIN MENU
+                  </button>
+                </>
+              )}
+              {result === "Pink" && (
+                <>
+                  <p className="lg:text-[35px] font-bold">CONGRATULATIONS...</p>
+                  <p className="lg:text-[35px] font-semibold">
+                    YOU ARE SELECTED FOR
+                  </p>
+                  <div>
+                    <img
+                      className="mt-6"
+                      src="/Assets/pink-status.svg"
+                      alt="yellow"
+                    />
+                  </div>
+                  <div className="max-w-[600px] px-12 py-5 rounded-md bg-pink-500  text-4xl font-bold">
+                    HOUSE OF LIFE
+                  </div>
+                  <button
+                    className="pt-40 pb-2"
+                    onClick={() => window.location.reload()}
+                  >
+                    BACK TO THE MAIN MENU
+                  </button>
+                </>
+              )}
+            </div>
           )}
         </div>
       )}

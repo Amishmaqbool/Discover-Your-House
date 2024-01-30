@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <head>
           <link rel="shortcut icon" href="/Assets/logo.svg" />
         </head>
-      <body className={inter.className}>{children}</body>
+      <body className="bg-black">{children}</body>
     </html>
   );
 }
