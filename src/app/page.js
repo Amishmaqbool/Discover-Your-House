@@ -165,12 +165,14 @@ export default function Home() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [sortingCeremonyEnded, setSortingCeremonyEnded] = useState(false);
   const [status, setStatus] = useState(false);
-  const [result, setResults] = useState("");
-  const startQuiz = () => {
+  const [result, setResults] = useState('');
+
+  const startQuiz = async () => {
+    await delay(1000);
     setQuizStarted(true);
   };
 
-  const handleOptionSelect = (selectedOption) => {
+  const handleOptionSelect = async (selectedOption) => {
     if (!quizStarted || sortingCeremonyEnded) {
       return;
     }
@@ -182,9 +184,11 @@ export default function Home() {
     ]);
 
     if (currentQuestion < questions.length - 1) {
+      await delay(2000);
       setCurrentQuestion(currentQuestion + 1);
     } else {
       const result = calculateResult();
+      await delay(2000);
       setSortingCeremonyEnded(true);
       setResults(result);
     }
@@ -201,9 +205,9 @@ export default function Home() {
       count[answer.color]++;
     });
     console.log(count);
-    let mostSelected = "Pink";
+    let mostSelected = 'Pink';
     if (count.Yellow === count.Pink && count.Yellow === count.Blue) {
-      mostSelected = "Pink";
+      mostSelected = 'Pink';
     } else {
       mostSelected = Object.keys(count).reduce((a, b) =>
         count[a] > count[b] ? a : b
@@ -212,9 +216,15 @@ export default function Home() {
 
     return mostSelected;
   };
-  const handleContinue = () => {
+
+  const handleContinue = async () => {
+   
+    await delay(1000);
     setStatus(true);
   };
+
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 
   return (
     <div
@@ -271,7 +281,7 @@ export default function Home() {
                     <div
                       key={option.label}
                       onClick={() => handleOptionSelect(option)}
-                      className="text-center hover:scale-105 duration-200 min-h-[200px] z-[1000] w-full"
+                      className="text-center hover:scale-105 duration-500 min-h-[200px] z-[1000] w-full"
                     >
                       {option.image && (
                         <div>
