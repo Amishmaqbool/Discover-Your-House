@@ -138,19 +138,19 @@ const questions = [
     text: "CHOOSE A PET",
     options: [
       {
-        label: "",
+        label: null,
         color: "Blue",
         image: "/Assets/choose-a-pet/primary.svg",
         backgroundanimated: false,
       },
       {
-        label: "",
+        label: null,
         color: "Pink",
         image: "/Assets/choose-a-pet/secondary.svg",
         backgroundanimated: false,
       },
       {
-        label: "",
+        label: null,
         color: "Yellow",
         image: "/Assets/choose-a-pet/tertiary.svg",
         backgroundanimated: false,
@@ -200,7 +200,7 @@ export default function Home() {
     answers.forEach((answer) => {
       count[answer.color]++;
     });
-
+    console.log(count);
     let mostSelected = "Pink";
     if (count.Yellow === count.Pink && count.Yellow === count.Blue) {
       mostSelected = "Pink";
