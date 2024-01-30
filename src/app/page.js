@@ -258,7 +258,7 @@ export default function Home() {
                     </video>
                   </div>
                   <div className="content-overlay">
-                    <li className="flex absolute -mt-40 max-w-[1400px] left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
+                    <li className="flex absolute -mt-44  left-1/2 transform -translate-x-1/2 lg:px-20 lg:text-[28px] pb-3 font-bold justify-center text-center">
                       {questions[currentQuestion].text} <br />
                     </li>
                   </div>
@@ -268,7 +268,7 @@ export default function Home() {
                     <div
                       key={option.label}
                       onClick={() => handleOptionSelect(option)}
-                      className="text-center hover:scale-105 min-h-[200px] z-[1000] w-full"
+                      className="text-center hover:scale-110 min-h-[200px] z-[1000] w-full"
                     >
                       {option.image && (
                         <div>
