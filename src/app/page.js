@@ -168,7 +168,7 @@ export default function Home() {
   const [result, setResults] = useState('');
 
   const startQuiz = async () => {
-    await delay(1000);
+    await delay(500)
     setQuizStarted(true);
   };
 
@@ -184,11 +184,11 @@ export default function Home() {
     ]);
 
     if (currentQuestion < questions.length - 1) {
-      await delay(1000);
+      await delay(500);
       setCurrentQuestion(currentQuestion + 1);
     } else {
       const result = calculateResult();
-      await delay(1000);
+      await delay(500);
       setSortingCeremonyEnded(true);
       setResults(result);
     }
