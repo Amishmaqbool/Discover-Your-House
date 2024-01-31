@@ -238,16 +238,16 @@ export default function Home() {
         {!quizStarted ? (
           <div className="flex flex-col mx-auto">
             <img src="/Assets/logo.svg" className="h-28 w-28 mx-auto" alt="" />
-            <p className="text-white Abnes text-5xl mt-[45.49px] text-center">
+            <p className="text-white Abnes text-5xl mt-[18.49px] text-center">
               SOI
             </p>
-            <h1 className="mx-auto guardian text-center leading-[45px]  font-thin lg:text-[48.69px] pt-16 ">
+            <h1 className="mx-auto guardian text-center leading-[55px]  font-thin lg:text-[48.69px] pt-16 ">
               DISCOVER <br/> YOUR <br/> HOUSE
             </h1>
             <div className="mx-auto pt-20">
               <button
                 onClick={startQuiz}
-                className="text-center conthraxSb hover:text-[#00FFFF] border-[#00FFFF] border-2 py-[15px] rounded-2xl px-[50px]  text-[35px] font-normal"
+                className="text-center conthraxSb hover:text-[#00FFFF] border-[#00FFFF] border-2 py-[15px] rounded-2xl px-[80px]  text-[35px] font-normal"
               >
                 START THE SORTING CEREMONY
               </button>
