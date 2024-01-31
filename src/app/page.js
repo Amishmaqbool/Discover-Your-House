@@ -78,7 +78,7 @@ const questions = [
   },
   {
     id: 4,
-    text: "THREE BOXES ARE REPLACED BEFORE YOU, WHICH ONE WOULD YOU CHOOSE?",
+    text: "THREE BOXES ARE PLACED BEFORE YOU, WHICH ONE WOULD YOU CHOOSE?",
     options: [
       {
         label: "TOOLS",
