@@ -410,7 +410,7 @@ export default function Home() {
                           />
                         </div>
                         <div className="max-w-[600px] px-12 py-5 rounded-2xl bg-blue-500 mt-12 text-[35px] conthraxSb">
-                          HOUSE OF PACE
+                          HOUSE OF SPACE
                         </div>
                         <button
                           className="pb-2 pt-32 conthraxSb"
@@ -495,7 +495,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="max-w-[600px]  shadow-2xl shadow-gray-700 conthraxSb px-12 py-5 rounded-md bg-blue-500 mt-12 text-[35px] font-normal">
-                    HOUSE OF PACE
+                    HOUSE OF SPACE
                   </div>
                   <button
                     className="pt-32 conthraxSb pb-2"
