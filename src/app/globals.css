@@ -5,30 +5,30 @@
 
 @font-face {
   font-family: "Abnes Regular";
-  src: url("../../public/fonts/abnes.otf");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
+  src: url("../../public/fonts/abnes.ttf");
 }
+
 @font-face {
-  font-family: "Guardian Regular";
-  src: url("../../public/fonts/GuardianSans-Regular.ttf");
+  font-family: 'Guardian Shadow';
   font-style: normal;
-  font-weight: 400;
-  font-display: swap;
+  font-weight: normal;
+  src: local('Guardian Pro'), url('../../public/fonts/guardian.woff') format('woff');
 }
+
 @font-face {
   font-family: "Conthraxsb Regular";
-  src: url("../../public/fonts/GuardianSans-Regular.ttf");
+  src: url("../../public/fonts/conthrax-sb.ttf");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
+@import url('https://fonts.cdnfonts.com/css/guardian-sans');
+
 .Abnes {
-  font-family: "Abnes", sans-serif;
+  font-family: "Abnes Regular", sans-serif;
 }
 .guardian {
-  font-family: "Guardian Regular", sans-serif;
+  font-family: 'Guardian Shadow', sans-serif;
 }
 .conthraxSb {
   font-family: "Conthraxsb Regular", sans-serif;

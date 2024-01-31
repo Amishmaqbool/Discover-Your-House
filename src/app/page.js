@@ -4,7 +4,7 @@ import VideoBackground from "@/components/VideoBackground";
 const questions = [
   {
     id: 1,
-    text: "IF YOU HAD TO CREATE A OPTION, WHAT WOULD YOU MAKE?",
+    text: "IF YOU HAD TO CREATE A  POTION, WHAT WOULD YOU MAKE?",
     backgroundanimated: true,
     options: [
       {
@@ -184,11 +184,11 @@ export default function Home() {
     ]);
 
     if (currentQuestion < questions.length - 1) {
-      await delay(2000);
+      await delay(1000);
       setCurrentQuestion(currentQuestion + 1);
     } else {
       const result = calculateResult();
-      await delay(2000);
+      await delay(1000);
       setSortingCeremonyEnded(true);
       setResults(result);
     }
@@ -241,8 +241,8 @@ export default function Home() {
             <p className="text-white Abnes text-5xl mt-[45.49px] text-center">
               SOI
             </p>
-            <h1 className="mx-auto guardian lg:text-[59.69px] pt-16 font-normal">
-              DISCOVER YOUR HOUSE
+            <h1 className="mx-auto guardian text-center leading-[45px] font-[400] lg:text-[59.69px] pt-16 ">
+              DISCOVER <br/> YOUR <br/> HOUSE
             </h1>
             <div className="mx-auto pt-20">
               <button
@@ -271,7 +271,7 @@ export default function Home() {
                     </video>
                   </div>
                   <div className="content-overlay">
-                    <li className="flex conthraxSb absolute -mt-32 px-16 w-[895px] left-1/2 transform -translate-x-1/2 lg:text-4xl pb-3 font-normal justify-center text-center">
+                    <li className="flex conthraxSb absolute -mt-36 px-16 w-[1000px] left-1/2 transform -translate-x-1/2 lg:text-4xl pb-3 font-normal justify-center text-center">
                       {questions[currentQuestion].text} <br />
                     </li>
                   </div>
